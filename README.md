@@ -73,6 +73,11 @@ The Notes of the Machine Learning Studies
     10.1 Hyperparamter Tuning
     10.2 Try different Models.
     10.3 Feature Engineering.
-   
+
+
+   </> Markdown
+   - vishva
+   - Keerthaa
+   - 
        
    
