@@ -37,7 +37,7 @@ Very large number it will approx one and veru small negative number it will appr
 
         If true label is 1
         -------------------
-        the we wxpect value higher like  0.8,  very less loss  value
+        the we expect value higher like  0.8,  very less loss  value
          So we can calculate loss =   y *  log(y_pred)
          as y=1 , so 1* log(y_pred) = log(y_pred)
          if y_pred = 0.8 , log(0.8) = -0.223 , approx = -0.2 , as we expect loss value is less for 0.8
@@ -51,11 +51,13 @@ Very large number it will approx one and veru small negative number it will appr
          if y_pred = 0.2 , log(1-0.2) = log(0.8) = -0.223 , approx = -0.2 , as we expect loss value is less for 0.2.
          if y_pred = 0.9 , log(1-0.9) = log(0.1) = -2.3 , approx = -2.3 , as we expect loss value  is high for 0.9
 
-         But on the two we got what we expected , but values are in minus , its false model expect positive value and also We cant do
+         But on the two we got what we expected , but values are in minus , its false, model expect positive value and also We cant do
          if condition like if y = 1 , then loss = y * log(y_pred)
                            if y = 0 , then loss = (1-y) * log (1-y_pred)
-          So we add together
+          So we add together for both the average as it contain both classes.
+     
                            loss = y*log(y_pred) + (1-y) * log (1-y_pred)
+     
                            Hence if y =1, then y*log(y_pred) will consider, as (1-1 = 0 ) will cancel.
                                  if y =0 , then (1-y)*log(1-y_pred) will consider , as (0*logy_pred = 0) will cancel.
           But eVenthough we miss one the value of the log will always in negative for number from 0 to 1 but we want plus direction
