@@ -6,7 +6,7 @@ for example , for Cancer dataset
 Not Cancer --> 90%
 Cancer --> 10%
 
-Here Non cancer pstients are more in number , will then they dominate the flow , and model learns majorly that leads to  have giher chance that model will more predict non cancer even if they are cancer patient,which is very might risk and invalid.
+Here Non cancer patients are more in number , will then they dominate the flow , and model learns majorly that leads to  have higher chance that model will more predict non cancer even if they are cancer patient,which is very might risk and invalid.
 
 ## Handling Class Imbalances:
 
@@ -19,7 +19,7 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
 ## 1. Data Level techniques:
 
 ### 1.1 Random OverSampling ( ROS ):
-       In this technique we randomly duplicate the minority samples until we reach the maximum sample size.
+       In this technique we randomly duplicate the minority samples,  until we reach the equal to maximum sample size.
 
        Advantage:
        1. Simple
@@ -27,7 +27,7 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
        3. Work well for small dataset.
 
        Disadvantage:
-       1. Overfitting rusk ( model will memory the patthern ) 
+       1. Overfitting risk ( model will memory the pattern ) 
        2. Descision boundary does not imporve ( no new data creation )
 
        When we can use:
@@ -36,7 +36,7 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
        3. Quick method
        
  ### 1.2 Random Undersampling ( RUS ):
-      Randomly remove data from the majority classes to balance the dataset.
+      Randomly remove data from the majority classes to balance the dataset with the minority.
 
       Disadvantage:
       1. Information loss
@@ -47,16 +47,16 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
       1. When majority is domininat extremely like 99%.
 
 ### 1.3 SMOTE ( Syntethic Minority Oversampling Technique ) :
-    To solve problem of random Oversampling , it was creaed , like it will create new point from the two near points using linear interpolation.
+    To solve problem of random Oversampling which will create data by duplicating samples , like SMOTE   will create new point from the two near points using linear interpolation ( choosing the points on the connecting line between the two near points).
 
     Core Idea:
     1. Pick a minority sample
     2. Find K - nearest minority neighbours.
-    3. Create a new synthetic  point between those old point using Interploation.
+    3. Create a new synthetic  point between those old connecting line using Interploation, its on linear line , so its linea interpolation.
 
     Mathematic formulae:
     --------------------
-    x_new = xi + lambda ( xz (neighbour point) - xi (current point) ) , lambda => Uniform(0,1).
+    x_new = xi + lambda [ xz (neighbour point) - xi (current point) ] , lambda => Uniform(0,1).
 
     Example , A = (2,3) and B = (6,7) [neighbour point from k nearest point ] 
     new point = (2,3) + 0.5(lambda) * [(6-2) , (7-3) ]
@@ -74,7 +74,7 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
 ### 1.4 Types of SMOTE:
 
 ### 1.4.1 Borderline SMOTE:
-    SMOTE genearte samples in safe areas , noise area  , verlaping area mostly its not upto use. So why we focus everywhere?
+    SMOTE genearte samples in safe areas , noise area  , overlaping area , mostly its not upto use like generating more samples in safe regions like easily classified area. So why we focus everywhere?
     Why not focus only on near the decision boundary , this Borderline  SMOTE.
 
     Core IDEA : Generate Synthetic points for minority points only near the border line , near the class boundary. as points near 
@@ -104,7 +104,7 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
     3. very higher dimension Data.
 
  ### 1.4.2 SMOTENN = SMOTE + ENN:
-    Its a hubrid class imbalance technique that 
+    Its a hybrid class imbalance technique that 
     1. Oversampling  minority class( SMOTE )
     2. Cleans noisy data (ENN - Edited Nearest Neighbour )
 
@@ -126,15 +126,15 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
     for example , we having rank column (1 to 4) , then That Rank column will have number from 1 to 4, eventhough numbers its categorical means 1.5/3.2 is meanigless.
 
     If we apply SMOTE for such number , for example , 
-    current point = 1 , neighbour_point =2 , Then SMOTE will create new point = 1.5 if lambda =0.5 , its pointless , there is no rank of 1.5 , the value will be update , but its nothing use fro model learning.
+    current point = 1 , neighbour_point =2 , Then SMOTE will create new point = 1.5 if lambda =0.5 , its pointless , there is no rank of 1.5 , the value will be update , but its nothing use for model learning.
 
     So , For categorical such number , we will not use SMOTE formulae , it will use mode selection of k nearest neighbours, if neighbout points are having rank 3 more, then  it will copy same.
 
     So , Fianlly
     For Numeric features     -> Linear interpolation ( regular SMOTE)
-    For Categorical features -> Mode selction 
+    For Categorical features -> Mode selction of data.
 
-    **** We must specify to SMOTE NC , that Which column is categorical"
+    **** We must specify to SMOTE NC , that Which column is categorical that need to create samples by mode."
     
 ### 1.4.4. ADASYN ( Adaptive Synthetic Sampling):
     Its an imporved version of SMOTE
@@ -143,7 +143,7 @@ Here Non cancer pstients are more in number , will then they dominate the flow ,
     SMOTE - generate samples uniformly.
     ADASYN - generate samples adaptively.
 
-    Simply Adasyn focus on creating the more minotiy point near the boundary area , harder ones ehich are diffcult to model to learn.
+    Simply Adasyn focus on creating the more minotiy point near the boundary area , harder ones which are diffcult to model to learn.
 
     Steps
     1. Get minority samples
