@@ -1,4 +1,4 @@
-Its for Clasificaion problem , summarizes the metrics for each class in Multi - class / Binary Class problem.
+Its for Classificaion problem , summarizes the metrics for each class in Multi - class / Binary Class problem.
 
 Gives
 * Precision
@@ -51,7 +51,7 @@ Gives
 
              Actual true samples la model ethana correct aa predict paniruku.
 
-            So to calculate actual true smple , it is 
+            So to calculate actual true sample , it is 
             Actual true = Model predicted True + Model mistakenly predicted true label as negative ( FN )
             hence its the base, its the denominator.
             We need to find rate model predicted postive in  actual true label , hence , model predicted positive in nominator
