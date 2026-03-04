@@ -87,7 +87,7 @@ How values of a feature are distributed?
 
 ### Definition:
     A Box plot summarize using five numbers:
-    1. Minimum whisler point
+    1. Minimum whisker point
     2. Q1      ( 25th Percentile)
     3. Median  ( 50th Percentile)
     4. Q3      ( 75th Percentile)
@@ -135,7 +135,7 @@ How values of a feature are distributed?
    * Skew Tells Asymmentry of distribution
    * Tells which side tail is longer.
    * How Strong that tail is
-   *  Skew Formulae: E[(X - mean)^3] \ Standar deviation ^3.
+   *  Skew Formulae: summation[(X - mean)^3] \ Standar deviation ^3.
    *  Skew > 0 --> Positive Skew ( Right Skew )
    *  Skew < 0 --> Negative Skew ( Left Skew )
 
