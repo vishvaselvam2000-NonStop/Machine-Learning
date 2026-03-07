@@ -104,4 +104,14 @@
 
       ***END***
 
+ ## Gradient:
+
+ Derivative of Tensor is called Gradient, 
+
+ f(x) = y         => scalar x to scalary y             => 2d plane.
+ f(z) = x^2 + 2y  => tuple of scalars(x,y) to scalar z => 2d surface in 3d plane.
+ If function take matrices as input => n number pf palnes
+
+ For all Such Gradient would apply as long as the function is derivative.
+
     
