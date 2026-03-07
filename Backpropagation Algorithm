@@ -1,0 +1,22 @@
+If Function is Differentiable we can find the Slope / gradeint but HOW? Using Backpropagation Algorithm.
+
+## CHAIN RULE:
+
+In model , there are chain of tensors functions/ operations , that are deruved using chain rule.
+
+y = fg(x) = f(g(x))
+
+i,e is grad(y,x) = grad(y, x1) * grad (x1,x)
+
+This the Chain rule.
+That is forward pass -> w,b -> l1 -> l2 -> loss
+backward pass -> loss -> l2 -> l1 -> w,b
+
+that is , from loss we can traverse back through and find each derivatives to ou the W,b
+
+dloss/dw =  dloss        dl2/dl1     dl1
+            ------  *  ---------- * -------
+              dl2          dl1        dw
+
+Same like for b , this the crust of chain rule , So with Chain rule and with Backpropagation algorithm we are calculating gradients with 
+respect to the Any tensor.
