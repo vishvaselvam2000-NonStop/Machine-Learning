@@ -6,6 +6,9 @@ This repository contains my structured notes while learning machine learning fro
 ---
 
 ## 1.✖️ Math Foundations
+- Mean
+- Median
+- Mode
 - Derivatives / Gradients
 - Backpropagation
 
