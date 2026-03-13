@@ -14,7 +14,7 @@ backward pass -> loss -> l2 -> l1 -> w,b
 
 that is , from loss we can traverse back through and find each derivatives to ou the W,b
 
-dloss/dw =  dloss        dl2/dl1     dl1
+dloss/dw =  dloss        dl2         dl1
             ------  *  ---------- * -------
               dl2          dl1        dw
 
