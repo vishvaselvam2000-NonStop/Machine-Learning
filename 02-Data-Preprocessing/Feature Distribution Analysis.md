@@ -46,6 +46,7 @@ How values of a feature are distributed?
        * Few Smaller values
        * Tail goes to left
        * Skew < 0
+       * Median > Mean
 
     4. Uniform Distribution ( Flat ):
        * Values Evenly spread across overall
