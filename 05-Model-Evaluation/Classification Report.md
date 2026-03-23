@@ -21,13 +21,13 @@ Gives
 
          So , Precision = TP / TP+FP . 
         So FP increase , Precision decrease , as its indirevtly proportional relation
-        When FP will decrease and precision score increase? ,  when we decrease threshold (decision boundary) , only minute of samples classified as positive strict condition, 
+        When FP will decrease and precision score increase? ,  when we increase threshold (decision boundary) , only minute of samples classified as positive strict condition, 
         it includes the Samples near hard region will neglect , so False positive will be low , because it will classfiy samples which are very high chance as positive in safe region as positive.
 
-        So ,  Threshold decrease => FP decrease => Precision increase , and vice versa.
+        So ,  Threshold Increase => FP decrease => Precision increase , and vice versa.
 
-        Threshold and False positive are directly proportional
-        Precision and Fase positive are indirectly proportional.Hence precision and Threshold value are indirectly proportioanl.
+        Threshold and Precision are directly proportional
+        Precision and Fase positive are indirectly proportional.Hence precision and Threshold value are directly proportioanl.
         
          
             
@@ -52,7 +52,7 @@ Gives
              Actual true samples la model ethana correct aa predict paniruku.
 
             So to calculate actual true sample , it is 
-            Actual true = Model predicted True + Model mistakenly predicted true label as negative ( FN )
+            Actual true = Model predicted True + Model mistakenly predicted true_label as negative ( FN )
             hence its the base, its the denominator.
             We need to find rate model predicted postive in  actual true label , hence , model predicted positive in nominator
 
