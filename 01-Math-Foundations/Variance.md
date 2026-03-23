@@ -36,5 +36,5 @@ here
        => Sumation (x - mean) ^2
 
 
-3. No Average the Squared differences , hence the Variance formulae is
-   =    
+3. Now Average the Squared differences , hence the Variance formulae is
+      sigma^2 => Summation ( x - mean)^2 / n  
