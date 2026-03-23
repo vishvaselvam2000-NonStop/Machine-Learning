@@ -21,9 +21,9 @@ Type of problems
 Very large number it will approx one and veru small negative number it will approx 0 .
 8. The Loss function we will use for logistic regression is Cross-Entropy the reason is
         As Bernouli distribution , p ^ y ( 1-P) ^ 1-y , take log and add minus then thats binary cross entropy --> 
-10.      loss_function = - [ y log(y^) + (1-y) log(1-y^)]
-        y = True Label
-        Y^ = Predicted label
+10.      loss_function = - [ y_trur log(y_pred) + (1-y_true) log(1-y_pred)]
+        y_true = True Label
+        y_pred = Predicted label
         Here,
         We use log magnify / penalize , as
         if true label is 1 , if      pred is 0.7  --> loss value would be lower ( penalize )
@@ -32,13 +32,13 @@ Very large number it will approx one and veru small negative number it will appr
         --------
         Probability closer to one -- log is close to 0 -- loss small
         Probability closer to zero -- log is very infinity -- loss large
-        value close to one --> log will give less number
-        value closer to zero --> log will give higher number
+        value close to one -->    log will give less number
+        value closer to zero -->  log will give higher number
 
         If true label is 1
         -------------------
         the we expect value higher like  0.8,  very less loss  value
-         So we can calculate loss =   y *  log(y_pred)
+         So we can calculate loss =   y_true *  log(y_pred)
          as y=1 , so 1* log(y_pred) = log(y_pred)
          if y_pred = 0.8 , log(0.8) = -0.223 , approx = -0.2 , as we expect loss value is less for 0.8
          if y_pred = 0.1 , log(0.1) =  -2.3 , approx = -2.3 , as we expect loss vlaue higher  for 0.1
@@ -46,7 +46,7 @@ Very large number it will approx one and veru small negative number it will appr
          If true label is 0
          ------------------
          We expect value lower like 0.2 , very less value
-         So we invert it , hence loss = (1-y) * log(1-y_pred)
+         So we invert it , hence loss = (1-y_true) * log(1-y_pred)
          as y=0 , so (1-0) * log(1-y_pred) = log(1-y_pred)
          if y_pred = 0.2 , log(1-0.2) = log(0.8) = -0.223 , approx = -0.2 , as we expect loss value is less for 0.2.
          if y_pred = 0.9 , log(1-0.9) = log(0.1) = -2.3 , approx = -2.3 , as we expect loss value  is high for 0.9
@@ -56,7 +56,7 @@ Very large number it will approx one and veru small negative number it will appr
                            if y = 0 , then loss = (1-y) * log (1-y_pred)
           So we add together for both the average as it contain both classes.
      
-                           loss = y*log(y_pred) + (1-y) * log (1-y_pred)
+                           loss = y_true *log(y_pred) + (1-y_true) * log (1-y_pred)
      
                            Hence if y =1, then y*log(y_pred) will consider, as (1-1 = 0 ) will cancel.
                                  if y =0 , then (1-y)*log(1-y_pred) will consider , as (0*logy_pred = 0) will cancel.
@@ -73,7 +73,7 @@ Very large number it will approx one and veru small negative number it will appr
        4. Compute loss for y_pred and y_true using cross entropy ( loss = -[y * log(y_pred) +  (1-y) * log(1-y_pred)])
        5. Gradient Calculation:
           dloss / dw = dloss / dz * dz/dw ( chain rule )
-          dlos/dz = y^ - y ( its derived from differentiatio of sigmoid function and also algeric operation)
+          dlos/dz = y^ - y ( its derived from differentiatio of sigmoid function and also algebric operation)
           dz/dw = x ( w and b are consant )
           Hence => dloss / dw = (y^- y) * x
           also, => dloss / db = (y^ - y)
